@@ -82,7 +82,6 @@ Resources:
             cd /var/www/html
             echo "it works! Udagram, Udacity" > index.html
         ImageId: !Ref AMItoUse
-        KeyName: !Ref KeyNameSecret
         SecurityGroupIds:
           - sg-05ca48ccf326e6ef6
         InstanceType: t3.small
