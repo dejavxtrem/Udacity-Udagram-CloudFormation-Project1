@@ -15,6 +15,9 @@ Parameters:
         Description: AMI to use for our base image
         Type: String
 
+    KeyNameSecret:
+        Type: String
+
 Resources:
   # Create the security Group protocol
   # Load Balancer
@@ -76,12 +79,12 @@ Resources:
             apt-get update -y
             apt-get install apache2 -y
             systemctl start apache2.service
-            rm ../../var/www/html/index.html
-            wget -P ../../var/www/html https://s3.console.aws.amazon.com/s3/object/udagramprojectdejay?region=us-west-2&prefix=dad-jokes/index.html
+            cd /var/www/html
+            echo "it works! Udagram, Udacity" > index.html
         ImageId: !Ref AMItoUse
-        KeyName: Outrapz101
+        KeyName: !Ref KeyNameSecret
         SecurityGroupIds:
-          - sg-09b7aa822559dc67f
+          - sg-05ca48ccf326e6ef6
         InstanceType: t3.small
         BlockDeviceMappings:
         - DeviceName: "/dev/sdk"

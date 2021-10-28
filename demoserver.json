@@ -6,5 +6,10 @@
 	{
 		"ParameterKey": "AMItoUse",
 		"ParameterValue": "ami-090717c950a5c34d3"
+	},
+	{
+		"ParameterKey": "KeyNameSecret",
+		"ParameterValue": "Outrapz101"
 	}
+
 ]
